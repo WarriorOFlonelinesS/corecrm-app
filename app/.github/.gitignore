@@ -1,0 +1,45 @@
+# Directory temporanee e di cache di CakePHP
+/tmp/*
+!/tmp/cachedb/
+!/tmp/cache/
+!/tmp/sessions/
+!/tmp/tests/
+!/tmp/logs/
+
+# File di log
+/logs/*
+!/logs/.gitignore
+
+# Config file sensibili e personalizzati
+/config/app_local.php
+/config/.env
+
+# Directory di vendor (composer)
+vendor/
+
+# File di ambiente e variabili
+.env
+.env.*
+
+# File di build/test coverage
+coverage/
+phpunit.xml
+
+# Output HTML coverage
+htmlcov/
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Sistemi operativi
+.DS_Store
+Thumbs.db
+
+# Composer
+composer.lock
+
+# Altro
+*.bak
