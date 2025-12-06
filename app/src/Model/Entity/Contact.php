@@ -3,13 +3,9 @@ namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
-class User extends Entity {
+class Contact extends Entity {
     protected $_accessible = [
-        'name' => true,
+        'phone' => true,
         'email' => true,
-    ];
-
-    protected $_hidden = [
-        'password'
     ];
 }
