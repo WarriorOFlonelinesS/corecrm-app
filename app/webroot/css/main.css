@@ -1,0 +1,14 @@
+body {
+  color: #757575;
+  font-family: "helvetica", sans-serif;
+}
+
+.padding-xs {
+  padding: 0.25em;
+}
+
+.primary {
+  color: #337AB7 !important;
+}
+
+/*# sourceMappingURL=main.css.map */

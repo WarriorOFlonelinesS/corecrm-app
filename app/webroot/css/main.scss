@@ -1,0 +1,16 @@
+
+// Import Bootstrap variables and components
+
+// Custom styles
+body {
+  color: #757575;
+  font-family: 'helvetica', sans-serif;
+}
+$primary: #337AB7;
+
+.padding-xs { padding: .25em; }
+
+// Colore personalizzato sempre applicato
+.primary {
+  color: $primary !important;
+}

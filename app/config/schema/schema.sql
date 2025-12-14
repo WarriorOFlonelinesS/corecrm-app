@@ -42,19 +42,28 @@ CREATE TABLE contacts (
     FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE
 );
 
-CREATE TABLE deals (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(150) NOT NULL,
-    description TEXT,
-    company_id INT NULL,
-    client_id INT NULL,
-    owner_id INT NOT NULL, 
-    status ENUM('new','in_progress','won','lost') DEFAULT 'new',
-    amount DECIMAL(12,2) DEFAULT 0,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE SET NULL,
-    FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE SET NULL,
-    FOREIGN KEY (owner_id) REFERENCES users(id) ON DELETE CASCADE
-);
+CREATE TABLE `orders` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `title` VARCHAR(150) NOT NULL,
+    `description` TEXT NULL,
+    `company_id` INT UNSIGNED NULL,
+    `client_id` INT UNSIGNED NULL,
+    `owner_id` INT UNSIGNED NOT NULL,
+    `status` ENUM(
+        'new',          
+        'in_progress', 
+        'paused',       
+        'done',        
+        'lost',        
+        'cancelled',    
+        'waiting',      
+        'closed'        
+    ) NOT NULL DEFAULT 'new',
+    `amount` DECIMAL(12,2) NOT NULL DEFAULT 0,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (`company_id`) REFERENCES `companies`(`id`) ON DELETE SET NULL,
+    FOREIGN KEY (`client_id`) REFERENCES `clients`(`id`) ON DELETE SET NULL,
+    FOREIGN KEY (`owner_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
