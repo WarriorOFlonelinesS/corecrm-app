@@ -13,4 +13,5 @@ class ClientsTable extends Table {
         $this->hasOne('Contacts');
         $this->addBehavior('Timestamp');
     }
+
 }

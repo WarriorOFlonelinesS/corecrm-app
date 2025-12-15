@@ -14,7 +14,9 @@ class ClientsCell extends Cell
     public function display()
     {
         $ClientsTable = TableRegistry::getTableLocator()->get('Clients');
-        $clients = $ClientsTable->find();
+        $clients = $ClientsTable->find()
+            ->contain('Contacts')
+            ->toArray();
         $this->set('clients', $clients);
     }
 }

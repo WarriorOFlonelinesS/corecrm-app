@@ -4,6 +4,8 @@
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +14,8 @@
             <th scope="row"><?= $client->id  ?></th>
             <td><?= $client->first_name ?></td>
             <td><?= $client->last_name ?></td>
+            <td><?= $client->contact->phone ?></td>
+            <td><?= $client->contact->email ?></td>
         </tr>
     <?php endforeach?>
   </tbody>
