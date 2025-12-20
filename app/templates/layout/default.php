@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'CRM of the future';
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,17 +39,29 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar p-0">
+    <nav class="bg-dark border-right col-md-2 d-none d-md-block bg-light sidebar p-0">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link active" href="<?= $this->Url->build('/') ?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Clients</a>
+            <a class="nav-link" href="#">
+              <?php echo $this->Html->link(
+                  'Clients',
+                  '/clients',
+                  ['class' => 'nav-link']
+              );
+              ?>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Orders</a>
+            <?php echo $this->Html->link(
+                'Orders',
+                '/orders',
+                ['class' => 'nav-link']
+            );
+            ?>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Settings</a>

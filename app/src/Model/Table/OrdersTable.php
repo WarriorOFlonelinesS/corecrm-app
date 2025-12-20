@@ -11,8 +11,6 @@ class OrdersTable extends Table {
         $this->setPrimaryKey('id');
         $this->belongsTo('Clients')
             ->setForeignKey('client_id');
-        $this->belongsTo('Companies')
-            ->setForeignKey('client_id');
         $this->addBehavior('Timestamp');
     }
 }

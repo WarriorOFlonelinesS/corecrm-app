@@ -1,6 +1,9 @@
 body {
-  color: #757575;
-  font-family: "helvetica", sans-serif;
+  background-color: #212529;
+}
+
+.border-right {
+  border-right: 1px solid white;
 }
 
 .padding-xs {

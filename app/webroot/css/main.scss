@@ -3,11 +3,12 @@
 
 // Custom styles
 body {
-  color: #757575;
-  font-family: 'helvetica', sans-serif;
+  background-color: #212529;
 }
 $primary: #337AB7;
-
+.border-right{
+  border-right:1px solid white;
+}
 .padding-xs { padding: .25em; }
 
 // Colore personalizzato sempre applicato
