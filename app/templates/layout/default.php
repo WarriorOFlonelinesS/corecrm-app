@@ -20,6 +20,13 @@ $cakeDescription = 'CRM of the future';
 <html>
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" 
+rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $cakeDescription ?>: <?= $this->fetch('title') ?></title>
@@ -39,21 +46,24 @@ $cakeDescription = 'CRM of the future';
 <body>
 <div class="container-fluid">
   <div class="row">
-    <nav class="bg-dark border-right col-md-2 d-none d-md-block bg-light sidebar p-0">
-      <div class="position-sticky pt-3">
+    <nav class="primary shadow-sm border-right col-md-2 d-none d-md-block bg-light sidebar p-0">
+      <div class="position-sticky px-30 pt-3">
         <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="<?= $this->Url->build('/') ?>">Home</a>
+          <li class="flex">
+             <div class="cyber-logo mb-30">
+                <?php  echo $this->Html->image('logo.png', array('alt' => 'CakePHP')); ?>
+             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link cyber-text" href="<?= $this->Url->build('/') ?>">Home</a>
+          </li>
+          <li class="nav-item">
               <?php echo $this->Html->link(
                   'Clients',
                   '/clients',
                   ['class' => 'nav-link']
               );
               ?>
-            </a>
           </li>
           <li class="nav-item">
             <?php echo $this->Html->link(

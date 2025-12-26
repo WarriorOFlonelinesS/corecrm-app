@@ -1,3 +1,3 @@
-<h1 class="primary">Clients</h1>
+<h1 class="cyber-header">Clients</h1>
 <?php 
 echo $this->cell('Clients');

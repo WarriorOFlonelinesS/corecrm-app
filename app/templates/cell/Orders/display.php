@@ -1,4 +1,4 @@
-<table class="table table-dark">
+<table class="table cyber-table">
   <thead>
     <tr>
       <th scope="col">№</th>
