@@ -2,11 +2,15 @@
 declare(strict_types=1);
 
 namespace App\Controller;
-use Cake\ORM\TableRegistry;
+
 use Cake\Controller\Controller;
 
 
-class OrdersController extends Controller
+class SettingsController extends AppController
 {
     public function index(){}
+
+    public function update() {
+        return 'false';
+    }
 }

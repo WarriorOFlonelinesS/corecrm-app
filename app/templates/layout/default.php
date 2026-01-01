@@ -14,7 +14,10 @@
  * @var \App\View\AppView $this
  */
 
+use Cake\Core\Configure;
+
 $cakeDescription = 'CRM of the future';
+$siteName = Configure::read('site_title')
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +49,7 @@ rel="stylesheet">
 <body>
 <div class="container-fluid">
   <div class="row">
-    <nav class="primary shadow-sm border-right col-md-2 d-none d-md-block bg-light sidebar p-0">
+    <nav class="cyber-side col-md-2 d-none d-md-block sidebar p-0">
       <div class="position-sticky px-30 pt-3">
         <ul class="nav flex-column">
           <li class="flex">
@@ -55,13 +58,18 @@ rel="stylesheet">
              </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link cyber-text" href="<?= $this->Url->build('/') ?>">Home</a>
+          <?php echo $this->Html->link(
+                  'Home',
+                  '/',
+                  ['class' => 'cyber-link my-2']
+              );
+              ?>
           </li>
           <li class="nav-item">
               <?php echo $this->Html->link(
                   'Clients',
                   '/clients',
-                  ['class' => 'nav-link']
+                  ['class' => 'cyber-link my-2']
               );
               ?>
           </li>
@@ -69,12 +77,17 @@ rel="stylesheet">
             <?php echo $this->Html->link(
                 'Orders',
                 '/orders',
-                ['class' => 'nav-link']
+                ['class' => 'cyber-link my-2']
             );
             ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Settings</a>
+          <?php echo $this->Html->link(
+                'Settings',
+                '/settings',
+                ['class' => 'cyber-link my-2']
+            );
+            ?>
           </li>
         </ul>
       </div>

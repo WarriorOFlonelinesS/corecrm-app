@@ -25,6 +25,7 @@ use Cake\Http\Middleware\BodyParserMiddleware;
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Http\MiddlewareQueue;
 use Cake\ORM\Locator\TableLocator;
+use Cake\ORM\TableRegistry;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
 
@@ -44,10 +45,16 @@ class Application extends BaseApplication
      * @return void
      */
     public function bootstrap(): void
-    {
+    {   
         // Call parent to load bootstrap from files.
         parent::bootstrap();
 
+        $seetingsTable = TableRegistry::getTableLocator()->get('Settings');
+        $query = $seetingsTable->find()->all();
+        
+        foreach($query as $setting) {
+            Configure::write($setting->key, $setting->value);
+        }
         if (PHP_SAPI !== 'cli') {
             // The bake plugin requires fallback table classes to work properly
             FactoryLocator::add('Table', (new TableLocator())->allowFallbackClass(false));
