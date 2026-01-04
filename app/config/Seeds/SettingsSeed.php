@@ -22,12 +22,8 @@ class SettingsSeed extends BaseSeed
     {
         $data = [
             [
-                'key' => 'admin_email',
-                'value' => 'admin@example.com',
-            ],
-            [
-                'key' => 'company_name',
-                'value' => 'My Company S.p.A.',
+                'key' => 'App.encoding',
+                'value' => 'UTF-8',
             ]
         ];
 

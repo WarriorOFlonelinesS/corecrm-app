@@ -48,13 +48,13 @@ class Application extends BaseApplication
     {   
         // Call parent to load bootstrap from files.
         parent::bootstrap();
-
-        $seetingsTable = TableRegistry::getTableLocator()->get('Settings');
-        $query = $seetingsTable->find()->all();
+        // $this->addPlugin('Settings');
+        // $seetingsTable = TableRegistry::getTableLocator()->get('Settings');
+        // $query = $seetingsTable->find()->all();
         
-        foreach($query as $setting) {
-            Configure::write($setting->key, $setting->value);
-        }
+        // foreach($query as $setting) {
+        //     Configure::write($setting->key, $setting->value);
+        // }
         if (PHP_SAPI !== 'cli') {
             // The bake plugin requires fallback table classes to work properly
             FactoryLocator::add('Table', (new TableLocator())->allowFallbackClass(false));

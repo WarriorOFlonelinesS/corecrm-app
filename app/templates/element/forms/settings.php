@@ -5,28 +5,35 @@
             <h2 class="cyber-header mb-4">
                     System update
                 </h2>
-               <?php echo $this->Form->create($setting, [
+               <?php echo $this->Form->create(null, [
                         'url' => [
-                            'controller' => 'Settings',
-                            'action' => 'update',
+                            'action' => 'saveAll',
                         ],
                     ]); ?>
                     <div class="mb-3">
                     <?php echo $this->Form->control(
                         'App.admin_email', [
-                            'value' => $setting['App.admin_email'] ?? '',
+                            'value' => $settings['admin_email'] ?? '',
                             'label' => ['text' => 'Admin e-mail', 'class' => 'cyber-label'],
                             'class' => 'form-control cyber-input'
                         ] 
                     ); ?>
                     </div>
                     
-                    <div class="mb-3">
-                    <label class="cyber-label">Maintenance Protocol</label>
-                        <?= $this->Form->checkbox('App.maintenance', [
-                            'checked' => ($settings['App.maintenance'] ?? '0') === '1',
-                            'class' => 'cyber-checkbox'
-                        ]) ?>
+                    <div class="cyber-container">
+                        <div class="cyber-row">
+                            <label class="cyber-checkbox-wrapper">
+                                <span class="cyber-label">Maintenance Protocol</span>
+                                <div class="checkbox-box">
+                                    <?= $this->Form->checkbox('App.maintenance', [
+                                        'checked' => $settings['maintenance'] === '1',
+                                        'hiddenField' => true,
+                                        'class' => 'cyber-input'
+                                    ]) ?>
+                                    <span class="cyber-tick"></span>
+                                </div>
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="d-grid mt-4">

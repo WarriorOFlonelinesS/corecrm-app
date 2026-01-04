@@ -178,6 +178,87 @@ li {
   opacity: 0; /* Или можно полностью скрыть при вводе */
   transition: 0.2s;
 }
+
+.cyber-container {
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+  background: rgba(10, 15, 20, 0.9); /* Глубокий темный фон */
+  border: 1px solid #00f2ff;
+  box-shadow: inset 0 0 15px rgba(0, 242, 255, 0.1), 0 0 10px rgba(0, 0, 0, 0.5);
+  
+  /* Срезаем углы для киберпанк-эффекта */
+  clip-path: polygon(
+      0% 15px, 15px 0%, 
+      100% 0%, 100% calc(100% - 15px), 
+      calc(100% - 15px) 100%, 0% 100%
+  );
+  
+  /* Плавное свечение при наведении */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cyber-container:hover {
+  box-shadow: inset 0 0 20px rgba(0, 242, 255, 0.2), 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+/* Декоративная полоска сверху (как индикатор питания) */
+.cyber-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 60px;
+  height: 3px;
+  background: #00f2ff;
+  box-shadow: 0 0 10px #00f2ff;
+}
+
+.cyber-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: #00f2ff; 
+  font-family: 'Courier New', monospace;
+}
+
+.cyber-checkbox input {
+  display: none;
+}
+
+.cyber-tick {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00f2ff;
+  margin-right: 12px;
+  position: relative;
+  background: rgba(0, 242, 255, 0.05);
+  transition: all 0.3s ease;
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%); /* Срезанные углы */
+}
+
+.cyber-checkbox:hover .cyber-tick {
+  box-shadow: 0 0 10px #00f2ff;
+  background: rgba(0, 242, 255, 0.1);
+}
+
+.cyber-checkbox input:checked + .cyber-tick {
+  background: #00f2ff;
+  box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #000;
+}
+
+.cyber-checkbox input:checked + .cyber-tick::after {
+  content: 'L'; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%) rotate(45deg) scaleX(-1);
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 @keyframes blink {
   0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
   20%, 24%, 55% { opacity: 0.7; text-shadow: none; }
