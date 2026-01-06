@@ -1,3 +1,4 @@
+<div class="cyber-table-container">
 <table class="table table-dark cyber-table">
   <thead>
     <tr>
@@ -16,7 +17,19 @@
             <td><?= $client->last_name ?></td>
             <td><?= $client->contact->phone ?></td>
             <td><?= $client->contact->email ?></td>
+            <td><?= $this->Html->link(__('UPDATE'), ['action'=>'edit', $client->id],
+            [
+              'class' => 'cyber-btn btn-update'
+            ]
+            ) ?></td>
+            <td><?= $this->Form->postLink(__('DELETE'), ['action'=>'delete', $client->id],
+            [
+              'confirm' => __('Are you sure?'),
+              'class' => 'cyber-btn btn-delete'
+            ]
+            ) ?></td>
         </tr>
     <?php endforeach?>
   </tbody>
 </table>
+</div>

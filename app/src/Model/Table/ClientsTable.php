@@ -10,8 +10,11 @@ class ClientsTable extends Table {
         $this->setTable('clients');
         $this->setPrimaryKey('id');
         $this->hasMany('Orders');
-        $this->hasOne('Contacts');
         $this->addBehavior('Timestamp');
+        $this->hasOne('Contacts', [
+            'dependent' => true,
+            'cascadeCallbacks' => true,
+        ]);
     }
 
 }
