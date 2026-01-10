@@ -359,6 +359,15 @@ li {
   outline: 1px solid #FCEE09;
 }
 
+.fa-plus-square:before, .fa-square-plus:before {
+  color: white !important;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 @keyframes blink {
   0% {
     opacity: 1;

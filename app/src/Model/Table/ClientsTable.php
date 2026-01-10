@@ -9,12 +9,14 @@ class ClientsTable extends Table {
         parent::initialize($config);
         $this->setTable('clients');
         $this->setPrimaryKey('id');
-        $this->hasMany('Orders');
+        $this->hasMany('Orders', [
+            'dependent' => true,
+            'cascadeCallbacks' => true,
+        ]);
         $this->addBehavior('Timestamp');
         $this->hasOne('Contacts', [
             'dependent' => true,
             'cascadeCallbacks' => true,
         ]);
     }
-
 }

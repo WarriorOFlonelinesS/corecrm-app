@@ -172,6 +172,7 @@ li {
 
 /* Кнопка с эффектом глитча */
 .cyber-btn {
+  display: block;
   background: var(--cyber-pink);
   color: white;
   border: none;
@@ -343,6 +344,14 @@ li {
   outline: 1px solid #FCEE09;
 }
 
+.fa-plus-square:before, .fa-square-plus:before {
+  color: white !important;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
 @keyframes blink {
   0% { opacity: 1; }
   50% { opacity: 0.7; }
